@@ -1,224 +1,262 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>COAC Team Lunch Countdown</title>
+```
+<title>COAC Team Lunch Countdown</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-        body {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #fff7ed, #ffe4c7);
-            padding: 20px;
-        }
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #fff7ed, #ffe4c7);
+        padding: 20px;
+    }
 
+    .card {
+        width: 100%;
+        max-width: 600px;
+        background: #ffffff;
+        border-radius: 24px;
+        padding: 40px 25px;
+        text-align: center;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .emoji {
+        font-size: 55px;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: 32px;
+        color: #222222;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        color: #666666;
+        margin-bottom: 30px;
+        line-height: 1.5;
+    }
+
+    .date {
+        font-size: 18px;
+        font-weight: bold;
+        color: #e85d04;
+        margin-bottom: 25px;
+    }
+
+    .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .time-box {
+        min-width: 90px;
+        background: #fff3e6;
+        border-radius: 15px;
+        padding: 18px 10px;
+    }
+
+    .number {
+        display: block;
+        font-size: 36px;
+        font-weight: bold;
+        color: #e85d04;
+    }
+
+    .label {
+        display: block;
+        margin-top: 5px;
+        font-size: 13px;
+        color: #777777;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .message {
+        margin-top: 30px;
+        font-size: 17px;
+        color: #555555;
+    }
+
+    #finished {
+        display: none;
+        font-size: 28px;
+        font-weight: bold;
+        color: #e85d04;
+        line-height: 1.4;
+    }
+
+    @media (max-width: 500px) {
         .card {
-            width: 100%;
-            max-width: 600px;
-            background: white;
-            border-radius: 24px;
-            padding: 40px 25px;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            padding: 35px 18px;
         }
 
         .emoji {
-            font-size: 55px;
-            margin-bottom: 15px;
+            font-size: 48px;
         }
 
         h1 {
-            font-size: 32px;
-            color: #222;
-            margin-bottom: 10px;
+            font-size: 27px;
         }
 
         .subtitle {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 30px;
+            font-size: 16px;
         }
 
         .date {
-            font-size: 18px;
-            font-weight: bold;
-            color: #e85d04;
-            margin-bottom: 25px;
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
+            font-size: 16px;
         }
 
         .time-box {
-            min-width: 90px;
-            background: #fff3e6;
-            border-radius: 15px;
-            padding: 18px 10px;
+            min-width: 70px;
+            padding: 15px 8px;
         }
 
         .number {
-            display: block;
-            font-size: 36px;
-            font-weight: bold;
-            color: #e85d04;
+            font-size: 28px;
         }
 
         .label {
-            display: block;
-            margin-top: 5px;
-            font-size: 13px;
-            color: #777;
-            text-transform: uppercase;
-        }
-
-        .message {
-            margin-top: 30px;
-            font-size: 17px;
-            color: #555;
+            font-size: 11px;
         }
 
         #finished {
-            display: none;
-            font-size: 28px;
-            font-weight: bold;
-            color: #e85d04;
+            font-size: 24px;
         }
+    }
+</style>
+```
 
-        @media (max-width: 500px) {
-            h1 {
-                font-size: 27px;
-            }
-
-            .time-box {
-                min-width: 70px;
-            }
-
-            .number {
-                font-size: 28px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <div class="card">
+```
+<div class="card">
 
-        <div class="emoji">🍽️</div>
+    <div class="emoji">🍽️</div>
 
-        <h1>COAC Team Lunch</h1>
+    <h1>COAC Team Lunch</h1>
 
-        <p class="subtitle">
-            Get ready! Our lunch is almost here.
-        </p>
+    <p class="subtitle">
+        Get ready! Our lunch is almost here.
+    </p>
 
-        <div class="date">
-            📅 September 27, 2026 &nbsp; | &nbsp; 🕛 12:00 PM
+    <div class="date">
+        📅 September 27, 2026 &nbsp; | &nbsp; 🕛 12:00 PM
+    </div>
+
+    <div class="countdown" id="countdown">
+
+        <div class="time-box">
+            <span class="number" id="days">00</span>
+            <span class="label">Days</span>
         </div>
 
-        <div class="countdown" id="countdown">
-
-            <div class="time-box">
-                <span class="number" id="days">00</span>
-                <span class="label">Days</span>
-            </div>
-
-            <div class="time-box">
-                <span class="number" id="hours">00</span>
-                <span class="label">Hours</span>
-            </div>
-
-            <div class="time-box">
-                <span class="number" id="minutes">00</span>
-                <span class="label">Minutes</span>
-            </div>
-
-            <div class="time-box">
-                <span class="number" id="seconds">00</span>
-                <span class="label">Seconds</span>
-            </div>
-
+        <div class="time-box">
+            <span class="number" id="hours">00</span>
+            <span class="label">Hours</span>
         </div>
 
-        <div id="finished">
-            🎉 It's Lunch Time! 🎉
+        <div class="time-box">
+            <span class="number" id="minutes">00</span>
+            <span class="label">Minutes</span>
         </div>
 
-        <p class="message">
-            See you there! ❤️
-        </p>
+        <div class="time-box">
+            <span class="number" id="seconds">00</span>
+            <span class="label">Seconds</span>
+        </div>
 
     </div>
 
-    <script>
-        // September 27, 2026 at 12:00 PM IST
-        const targetDate =
-            new Date("2026-09-27T12:00:00+05:30").getTime();
+    <div id="finished">
+        🎉 It's Lunch Time! 🎉
+    </div>
 
-        function updateCountdown() {
+    <p class="message">
+        See you there! ❤️
+    </p>
 
-            const now = new Date().getTime();
-            const difference = targetDate - now;
+</div>
 
-            if (difference <= 0) {
-                document.getElementById("countdown").style.display = "none";
-                document.getElementById("finished").style.display = "block";
-                return;
-            }
+<script>
+    // Target: September 27, 2026 at 12:00 PM IST
+    const targetDate = new Date(
+        "2026-09-27T12:00:00+05:30"
+    ).getTime();
 
-            const days = Math.floor(
-                difference / (1000 * 60 * 60 * 24)
-            );
+    const countdown = document.getElementById("countdown");
+    const finished = document.getElementById("finished");
 
-            const hours = Math.floor(
-                (difference % (1000 * 60 * 60 * 24)) /
-                (1000 * 60 * 60)
-            );
+    const daysElement = document.getElementById("days");
+    const hoursElement = document.getElementById("hours");
+    const minutesElement = document.getElementById("minutes");
+    const secondsElement = document.getElementById("seconds");
 
-            const minutes = Math.floor(
-                (difference % (1000 * 60 * 60)) /
-                (1000 * 60)
-            );
+    function updateCountdown() {
 
-            const seconds = Math.floor(
-                (difference % (1000 * 60)) /
-                1000
-            );
+        const now = Date.now();
+        const difference = targetDate - now;
 
-            document.getElementById("days").textContent =
-                String(days).padStart(2, "0");
-
-            document.getElementById("hours").textContent =
-                String(hours).padStart(2, "0");
-
-            document.getElementById("minutes").textContent =
-                String(minutes).padStart(2, "0");
-
-            document.getElementById("seconds").textContent =
-                String(seconds).padStart(2, "0");
+        // Lunch time has arrived
+        if (difference <= 0) {
+            countdown.style.display = "none";
+            finished.style.display = "block";
+            clearInterval(timer);
+            return;
         }
 
-        updateCountdown();
+        const days = Math.floor(
+            difference / (1000 * 60 * 60 * 24)
+        );
 
-        setInterval(updateCountdown, 1000);
-    </script>
+        const hours = Math.floor(
+            (difference % (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
+        );
+
+        const minutes = Math.floor(
+            (difference % (1000 * 60 * 60)) /
+            (1000 * 60)
+        );
+
+        const seconds = Math.floor(
+            (difference % (1000 * 60)) /
+            1000
+        );
+
+        daysElement.textContent = String(days).padStart(2, "0");
+        hoursElement.textContent = String(hours).padStart(2, "0");
+        minutesElement.textContent = String(minutes).padStart(2, "0");
+        secondsElement.textContent = String(seconds).padStart(2, "0");
+    }
+
+    // Start countdown immediately
+    updateCountdown();
+
+    // Update every second
+    const timer = setInterval(updateCountdown, 1000);
+</script>
+```
 
 </body>
 </html>
-
-  
