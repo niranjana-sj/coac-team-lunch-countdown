@@ -1,163 +1,224 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>COAC Team Lunch Countdown</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-  * {
-    box-sizing: border-box;
-  }
+    <title>COAC Team Lunch Countdown</title>
 
-  body {
-    margin: 0;
-    background: #f4efdf;
-    display: flex;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  .wrap {
-    width: min(691px, 100vw);
-    position: relative;
-  }
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #fff7ed, #ffe4c7);
+            padding: 20px;
+        }
 
-  .poster {
-    width: 100%;
-    display: block;
-  }
+        .card {
+            width: 100%;
+            max-width: 600px;
+            background: white;
+            border-radius: 24px;
+            padding: 40px 25px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
 
-  .countdown {
-    position: absolute;
-    left: 3.3%;
-    right: 3.3%;
-    top: 44.65%;
-    height: 20.25%;
-    color: white;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    text-align: center;
-  }
+        .emoji {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
 
-  .unit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
+        h1 {
+            font-size: 32px;
+            color: #222;
+            margin-bottom: 10px;
+        }
 
-  .num {
-    font-size: clamp(48px, 11vw, 78px);
-    line-height: .9;
-    font-weight: 800;
-    letter-spacing: -2px;
-  }
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
 
-  .label {
-    font-size: clamp(11px, 2.5vw, 16px);
-    letter-spacing: 2px;
-    color: #dfe9e4;
-  }
+        .date {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e85d04;
+            margin-bottom: 25px;
+        }
 
-  .seconds {
-    grid-column: 2;
-    grid-row: 1;
-  }
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
 
-  .hours {
-    grid-column: 1;
-    grid-row: 1;
-  }
+        .time-box {
+            min-width: 90px;
+            background: #fff3e6;
+            border-radius: 15px;
+            padding: 18px 10px;
+        }
 
-  .minutes {
-    grid-column: 3;
-    grid-row: 1;
-  }
+        .number {
+            display: block;
+            font-size: 36px;
+            font-weight: bold;
+            color: #e85d04;
+        }
 
-  @media(max-width:480px) {
-    .num {
-      font-size: 54px;
-    }
-  }
-</style>
+        .label {
+            display: block;
+            margin-top: 5px;
+            font-size: 13px;
+            color: #777;
+            text-transform: uppercase;
+        }
+
+        .message {
+            margin-top: 30px;
+            font-size: 17px;
+            color: #555;
+        }
+
+        #finished {
+            display: none;
+            font-size: 28px;
+            font-weight: bold;
+            color: #e85d04;
+        }
+
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 27px;
+            }
+
+            .time-box {
+                min-width: 70px;
+            }
+
+            .number {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="wrap">
+    <div class="card">
 
-  <!-- Your original poster image is embedded here -->
-  <img
-    class="poster"
-    src="YOUR_BASE64_IMAGE_HERE"
-    alt="COAC Team Lunch invitation"
-  >
+        <div class="emoji">🍽️</div>
 
-  <div class="countdown" id="countdown">
+        <h1>COAC Team Lunch</h1>
 
-    <div class="unit hours">
-      <div class="num" id="hours">--</div>
-      <div class="label">HOURS</div>
+        <p class="subtitle">
+            Get ready! Our lunch is almost here.
+        </p>
+
+        <div class="date">
+            📅 September 27, 2026 &nbsp; | &nbsp; 🕛 12:00 PM
+        </div>
+
+        <div class="countdown" id="countdown">
+
+            <div class="time-box">
+                <span class="number" id="days">00</span>
+                <span class="label">Days</span>
+            </div>
+
+            <div class="time-box">
+                <span class="number" id="hours">00</span>
+                <span class="label">Hours</span>
+            </div>
+
+            <div class="time-box">
+                <span class="number" id="minutes">00</span>
+                <span class="label">Minutes</span>
+            </div>
+
+            <div class="time-box">
+                <span class="number" id="seconds">00</span>
+                <span class="label">Seconds</span>
+            </div>
+
+        </div>
+
+        <div id="finished">
+            🎉 It's Lunch Time! 🎉
+        </div>
+
+        <p class="message">
+            See you there! ❤️
+        </p>
+
     </div>
 
-    <div class="unit minutes">
-      <div class="num" id="minutes">--</div>
-      <div class="label">MINUTES</div>
-    </div>
+    <script>
+        // September 27, 2026 at 12:00 PM IST
+        const targetDate =
+            new Date("2026-09-27T12:00:00+05:30").getTime();
 
-    <div class="unit seconds">
-      <div class="num" id="seconds">--</div>
-      <div class="label">SECONDS</div>
-    </div>
+        function updateCountdown() {
 
-  </div>
-</div>
+            const now = new Date().getTime();
+            const difference = targetDate - now;
 
-<script>
+            if (difference <= 0) {
+                document.getElementById("countdown").style.display = "none";
+                document.getElementById("finished").style.display = "block";
+                return;
+            }
 
-const target = new Date("2026-09-27T12:00:00+05:30").getTime();
+            const days = Math.floor(
+                difference / (1000 * 60 * 60 * 24)
+            );
 
-function updateCountdown() {
+            const hours = Math.floor(
+                (difference % (1000 * 60 * 60 * 24)) /
+                (1000 * 60 * 60)
+            );
 
-  const now = Date.now();
-  let diff = target - now;
+            const minutes = Math.floor(
+                (difference % (1000 * 60 * 60)) /
+                (1000 * 60)
+            );
 
-  if (diff <= 0) {
+            const seconds = Math.floor(
+                (difference % (1000 * 60)) /
+                1000
+            );
 
-    document.getElementById("hours").textContent = "00";
-    document.getElementById("minutes").textContent = "00";
-    document.getElementById("seconds").textContent = "00";
+            document.getElementById("days").textContent =
+                String(days).padStart(2, "0");
 
-    return;
-  }
+            document.getElementById("hours").textContent =
+                String(hours).padStart(2, "0");
 
-  const totalSeconds = Math.floor(diff / 1000);
+            document.getElementById("minutes").textContent =
+                String(minutes).padStart(2, "0");
 
-  const h = Math.floor(totalSeconds / 3600);
+            document.getElementById("seconds").textContent =
+                String(seconds).padStart(2, "0");
+        }
 
-  const m = Math.floor(
-    (totalSeconds % 3600) / 60
-  );
+        updateCountdown();
 
-  const s = totalSeconds % 60;
-
-  document.getElementById("hours").textContent =
-    String(h).padStart(2, "0");
-
-  document.getElementById("minutes").textContent =
-    String(m).padStart(2, "0");
-
-  document.getElementById("seconds").textContent =
-    String(s).padStart(2, "0");
-}
-
-updateCountdown();
-
-setInterval(updateCountdown, 1000);
-
-</script>
+        setInterval(updateCountdown, 1000);
+    </script>
 
 </body>
 </html>
+
+  
